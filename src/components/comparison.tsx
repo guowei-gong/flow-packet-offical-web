@@ -1,35 +1,25 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Check, X, ArrowRight } from "lucide-react";
-
-const codeFirstPains = [
-  "Write boilerplate socket code for every test",
-  "Manually manage connection lifecycle and timeouts",
-  "No visual overview of complex test sequences",
-  "Hard to share and collaborate on test scenarios",
-];
-
-const visualFirstBenefits = [
-  "Drag-and-drop test flow design on canvas",
-  "Built-in protocol handling and connection management",
-  "Visual overview of entire test orchestration",
-  "Share flows as exportable project files",
-];
+import { useTranslation } from "@/i18n/context";
 
 export function Comparison() {
+  const { t } = useTranslation();
+
   return (
     <section className="py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center">
           <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">
-            What is{" "}
+            {t.comparison.title}{" "}
             <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-              Visual-First
+              {t.comparison.titleHighlight}
             </span>{" "}
-            packet testing tool?
+            {t.comparison.titleEnd}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-neutral-400">
-            Stop writing repetitive test scripts. FlowPacket lets you visually
-            design, orchestrate, and execute transport-layer tests.
+            {t.comparison.subtitle}
           </p>
         </div>
 
@@ -38,13 +28,13 @@ export function Comparison() {
           <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-red-500/20 bg-red-500/10 px-3 py-1 text-sm text-red-400">
               <X className="h-3.5 w-3.5" />
-              Code-First Approach
+              {t.comparison.codeFirst}
             </div>
             <h3 className="text-xl font-semibold text-neutral-300">
-              Traditional Script Testing
+              {t.comparison.codeFirstTitle}
             </h3>
             <ul className="mt-6 space-y-4">
-              {codeFirstPains.map((pain) => (
+              {t.comparison.codeFirstPains.map((pain) => (
                 <li key={pain} className="flex items-start gap-3">
                   <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-red-500/10">
                     <X className="h-3 w-3 text-red-400" />
@@ -63,7 +53,10 @@ export function Comparison() {
               </div>
               <div>
                 socket.<span className="text-blue-400">write</span>(
-                <span className="text-green-400">&apos;test_packet&apos;</span>);
+                <span className="text-green-400">
+                  &apos;test_packet&apos;
+                </span>
+                );
               </div>
               <div>
                 socket.<span className="text-blue-400">on</span>(
@@ -83,13 +76,13 @@ export function Comparison() {
           <div className="rounded-2xl border border-teal-500/20 bg-teal-500/[0.03] p-8">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-teal-500/20 bg-teal-500/10 px-3 py-1 text-sm text-teal-400">
               <Check className="h-3.5 w-3.5" />
-              Visual-First Approach
+              {t.comparison.visualFirst}
             </div>
             <h3 className="text-xl font-semibold text-white">
-              FlowPacket Canvas Testing
+              {t.comparison.visualFirstTitle}
             </h3>
             <ul className="mt-6 space-y-4">
-              {visualFirstBenefits.map((benefit) => (
+              {t.comparison.visualFirstBenefits.map((benefit) => (
                 <li key={benefit} className="flex items-start gap-3">
                   <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-teal-500/20">
                     <Check className="h-3 w-3 text-teal-400" />
@@ -120,7 +113,7 @@ export function Comparison() {
 
         <div className="mt-12 text-center">
           <Button size="lg">
-            Create First Test Flow
+            {t.comparison.cta}
             <ArrowRight className="h-5 w-5" />
           </Button>
         </div>

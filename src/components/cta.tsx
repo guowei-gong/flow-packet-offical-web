@@ -1,7 +1,12 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useTranslation } from "@/i18n/context";
 
 export function CTA() {
+  const { t } = useTranslation();
+
   return (
     <section className="relative py-32 overflow-hidden">
       {/* Background gradient */}
@@ -11,19 +16,18 @@ export function CTA() {
 
       <div className="relative mx-auto max-w-4xl px-6 text-center">
         <h2 className="text-4xl font-bold sm:text-5xl md:text-6xl">
-          The Next Era of{" "}
+          {t.cta.title}{" "}
           <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-            Game Testing
+            {t.cta.titleHighlight}
           </span>{" "}
-          Starts Now
+          {t.cta.titleEnd}
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-lg text-neutral-400">
-          Join the open-source movement. Design your test flows visually,
-          execute with confidence, and ship better games.
+          {t.cta.subtitle}
         </p>
         <div className="mt-10">
           <Button size="lg" className="text-base px-10">
-            Start Now
+            {t.cta.button}
             <ArrowRight className="h-5 w-5" />
           </Button>
         </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { LanguageProvider } from "@/i18n/context";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FlowPacket - Visual Game Packet Testing Tool",
+  title: "FlowPacket - 可视化游戏协议测试工具",
   description:
-    "Design, test, and orchestrate your game packets with a visual-first approach. The open-source Postman alternative for transport-layer testing.",
+    "专为游戏服务器设计的可视化协议测试工具。导入 Proto 文件，拖拽消息节点，连线编排，一键执行多步骤协议测试。",
 };
 
 export default function RootLayout({
@@ -24,11 +25,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="zh" className="dark" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   );

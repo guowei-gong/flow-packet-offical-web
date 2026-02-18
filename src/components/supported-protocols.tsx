@@ -1,4 +1,10 @@
+"use client";
+
+import { useTranslation } from "@/i18n/context";
+
 export function SupportedProtocols() {
+  const { t } = useTranslation();
+
   const protocols = [
     { name: "TCP", color: "from-blue-500 to-cyan-500" },
     { name: "UDP", color: "from-green-500 to-emerald-500" },
@@ -10,7 +16,7 @@ export function SupportedProtocols() {
     <section className="py-20">
       <div className="mx-auto max-w-7xl px-6">
         <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
-          Lots of Protocols to Choose From, More Coming Soon
+          {t.protocols.title}
         </p>
 
         <div className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4 max-w-2xl mx-auto">

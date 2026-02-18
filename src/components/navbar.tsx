@@ -3,10 +3,16 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X, Zap, Globe } from "lucide-react";
+import { useTranslation, type Locale } from "@/i18n/context";
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { locale, t, setLocale } = useTranslation();
+
+  const toggleLocale = () => {
+    setLocale(locale === "zh" ? "en" : ("zh" as Locale));
+  };
 
   return (
     <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/60 backdrop-blur-xl">
@@ -25,25 +31,32 @@ export function Navbar() {
             href="#features"
             className="text-sm text-neutral-400 transition-colors hover:text-white"
           >
-            Features
+            {t.nav.features}
           </Link>
           <Link
             href="#resources"
             className="text-sm text-neutral-400 transition-colors hover:text-white"
           >
-            Resources
+            {t.nav.resources}
           </Link>
           <Link
             href="#editor"
             className="text-sm text-neutral-400 transition-colors hover:text-white"
           >
-            Editor
+            {t.nav.editor}
           </Link>
         </nav>
 
-        {/* Desktop CTA */}
-        <div className="hidden md:block">
-          <Button size="sm">Launch App</Button>
+        {/* Desktop CTA + Language Switcher */}
+        <div className="hidden items-center gap-3 md:flex">
+          <button
+            onClick={toggleLocale}
+            className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-neutral-300 transition-colors hover:border-white/20 hover:text-white"
+          >
+            <Globe className="h-3.5 w-3.5" />
+            {locale === "zh" ? "EN" : "中文"}
+          </button>
+          <Button size="sm">{t.nav.launchApp}</Button>
         </div>
 
         {/* Mobile Toggle */}
@@ -51,7 +64,11 @@ export function Navbar() {
           className="md:hidden text-white"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
-          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {mobileOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
         </button>
       </div>
 
@@ -64,25 +81,34 @@ export function Navbar() {
               className="text-sm text-neutral-400 transition-colors hover:text-white"
               onClick={() => setMobileOpen(false)}
             >
-              Features
+              {t.nav.features}
             </Link>
             <Link
               href="#resources"
               className="text-sm text-neutral-400 transition-colors hover:text-white"
               onClick={() => setMobileOpen(false)}
             >
-              Resources
+              {t.nav.resources}
             </Link>
             <Link
               href="#editor"
               className="text-sm text-neutral-400 transition-colors hover:text-white"
               onClick={() => setMobileOpen(false)}
             >
-              Editor
+              {t.nav.editor}
             </Link>
-            <Button size="sm" className="w-full">
-              Launch App
-            </Button>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={toggleLocale}
+                className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-neutral-300 transition-colors hover:border-white/20 hover:text-white"
+              >
+                <Globe className="h-3.5 w-3.5" />
+                {locale === "zh" ? "EN" : "中文"}
+              </button>
+              <Button size="sm" className="flex-1">
+                {t.nav.launchApp}
+              </Button>
+            </div>
           </nav>
         </div>
       )}

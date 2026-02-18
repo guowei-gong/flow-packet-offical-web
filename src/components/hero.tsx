@@ -1,9 +1,14 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { Github, Star, Play } from "lucide-react";
+import { useTranslation } from "@/i18n/context";
 
 export function Hero() {
+  const { t } = useTranslation();
+
   return (
     <section className="relative overflow-hidden pt-32 pb-20">
       {/* Background radial glow */}
@@ -15,34 +20,32 @@ export function Hero() {
         {/* Badge */}
         <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-neutral-300">
           <span className="inline-block h-2 w-2 rounded-full bg-green-400 animate-pulse" />
-          Now in Public Beta
+          {t.hero.badge}
         </div>
 
         {/* Main Heading */}
         <h1 className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-          Design Test and Orchestrate your{" "}
+          {t.hero.title}{" "}
           <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-            Game Packets
+            {t.hero.titleHighlight}
           </span>{" "}
-          in no Time
+          {t.hero.titleEnd}
         </h1>
 
         {/* Subtitle */}
         <p className="mx-auto mt-6 max-w-2xl text-lg text-neutral-400 md:text-xl">
-          FlowPacket is a visual-first testing tool for transport-layer
-          protocols. Design test flows on canvas, execute tests, and analyze
-          results — all in one place.
+          {t.hero.subtitle}
         </p>
 
         {/* CTA Buttons */}
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button variant="secondary" size="lg">
             <Github className="h-5 w-5" />
-            GitHub Repo
+            {t.hero.githubRepo}
           </Button>
           <Button size="lg">
             <Play className="h-5 w-5" />
-            Start for Free
+            {t.hero.startFree}
           </Button>
         </div>
 
@@ -71,8 +74,9 @@ export function Hero() {
               <span className="ml-1 text-sm text-neutral-400">4.5/5</span>
             </div>
             <p className="text-sm text-neutral-500">
-              Trusted by <span className="text-white font-medium">400+</span>{" "}
-              Engineers
+              {t.hero.trustedBy}{" "}
+              <span className="text-white font-medium">400+</span>{" "}
+              {t.hero.trustedByEnd}
             </p>
           </div>
         </div>
@@ -91,7 +95,7 @@ export function Hero() {
               <div className="h-3 w-3 rounded-full bg-yellow-500/60" />
               <div className="h-3 w-3 rounded-full bg-green-500/60" />
               <span className="ml-3 text-xs text-neutral-500">
-                FlowPacket Editor — test-flow.fpk
+                {t.hero.editorTitle}
               </span>
             </div>
 

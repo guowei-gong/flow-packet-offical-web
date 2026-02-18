@@ -1,29 +1,34 @@
+"use client";
+
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import { Zap } from "lucide-react";
-
-const footerLinks = {
-  Product: [
-    { label: "Features", href: "#features" },
-    { label: "Editor", href: "#editor" },
-  ],
-  "Social Media": [
-    { label: "GitHub", href: "https://github.com" },
-    { label: "Discord", href: "#" },
-    { label: "X (Twitter)", href: "#" },
-  ],
-  Resources: [
-    { label: "Design", href: "#" },
-    { label: "Test", href: "#" },
-    { label: "Analyze", href: "#" },
-  ],
-  Legal: [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms & Conditions", href: "#" },
-  ],
-};
+import { useTranslation } from "@/i18n/context";
 
 export function Footer() {
+  const { t } = useTranslation();
+
+  const footerLinks = {
+    [t.footer.product]: [
+      { label: t.footer.features, href: "#features" },
+      { label: t.footer.editor, href: "#editor" },
+    ],
+    [t.footer.socialMedia]: [
+      { label: "GitHub", href: "https://github.com" },
+      { label: "Discord", href: "#" },
+      { label: "X (Twitter)", href: "#" },
+    ],
+    [t.footer.resources]: [
+      { label: t.footer.design, href: "#" },
+      { label: t.footer.test, href: "#" },
+      { label: t.footer.analyze, href: "#" },
+    ],
+    [t.footer.legal]: [
+      { label: t.footer.privacyPolicy, href: "#" },
+      { label: t.footer.termsConditions, href: "#" },
+    ],
+  };
+
   return (
     <footer className="border-t border-white/10">
       <div className="mx-auto max-w-7xl px-6 py-16">
@@ -37,7 +42,7 @@ export function Footer() {
               <span className="text-lg font-bold text-white">FlowPacket</span>
             </Link>
             <p className="mt-4 text-sm text-neutral-500">
-              Smart Game Testing Starts Here
+              {t.footer.tagline}
             </p>
             <div className="mt-4 flex items-center gap-4">
               <Link
@@ -102,7 +107,7 @@ export function Footer() {
         <Separator className="my-8" />
 
         <p className="text-center text-sm text-neutral-600">
-          &copy; 2026 FlowPacket. All rights reserved.
+          {t.footer.copyright}
         </p>
       </div>
     </footer>
