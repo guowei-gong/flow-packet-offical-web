@@ -126,16 +126,6 @@ export const en = {
         description:
           "Create reusable test sequences that run automatically. Schedule tests or trigger them from CI/CD pipelines.",
       },
-      {
-        title: "Full Test History",
-        description:
-          "Every test execution is recorded with full context. Compare results across runs and track performance over time.",
-      },
-      {
-        title: "Multi-Protocol Support",
-        description:
-          "Mix and match protocols in a single test flow. Test complex scenarios that span TCP, UDP, and WebSocket connections.",
-      },
     ],
   },
 

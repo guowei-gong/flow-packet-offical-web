@@ -10,9 +10,9 @@ export const zh = {
   // Hero
   hero: {
     badge: "公测进行中",
-    title: "可视化设计、测试和编排你的",
+    title: "轻而易举的编排",
     titleHighlight: "游戏协议",
-    titleEnd: "轻而易举",
+    titleEnd: "测试用例",
     subtitle:
       "FlowPacket 是一款专为游戏服务器设计的可视化协议测试工具。导入 Proto 文件，在画布上拖拽消息节点并连线编排，一键执行多步骤协议测试流程。",
     githubRepo: "GitHub 仓库",
@@ -64,7 +64,7 @@ export const zh = {
   // Comparison
   comparison: {
     title: "什么是",
-    titleHighlight: "可视化优先",
+    titleHighlight: "可视化",
     titleEnd: "协议测试工具？",
     subtitle:
       "告别重复编写测试脚本。FlowPacket 让你可视化地设计、编排和执行游戏服务器的多步骤协议测试——登录 → 进入房间 → 准备 → 开始战斗 → 结算，一气呵成。",
@@ -114,16 +114,6 @@ export const zh = {
         title: "自动化测试序列",
         description:
           "创建可复用的自动化测试序列。支持定时执行或通过 CI/CD 流水线触发。",
-      },
-      {
-        title: "完整测试历史",
-        description:
-          "每次测试执行都会记录完整上下文。支持跨运行对比结果和追踪性能趋势。",
-      },
-      {
-        title: "多协议支持",
-        description:
-          "在单个测试流程中混合使用多种协议。测试跨越 TCP、UDP 和 WebSocket 连接的复杂场景。",
       },
     ],
   },

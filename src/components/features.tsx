@@ -1,17 +1,10 @@
 "use client";
 
 import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
-import {
-  Activity,
-  Shield,
-  GitBranch,
-  Repeat,
-  Clock,
-  Layers,
-} from "lucide-react";
+import { Activity, Shield, GitBranch, Repeat } from "lucide-react";
 import { useTranslation } from "@/i18n/context";
 
-const featureIcons = [Activity, Shield, GitBranch, Repeat, Clock, Layers];
+const featureIcons = [Activity, Shield, GitBranch, Repeat];
 
 export function Features() {
   const { t } = useTranslation();
@@ -40,7 +33,7 @@ export function Features() {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid gap-6 sm:grid-cols-2">
           {t.features.items.map((feature, index) => {
             const Icon = featureIcons[index];
             return (

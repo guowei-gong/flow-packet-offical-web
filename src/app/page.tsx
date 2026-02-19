@@ -1,7 +1,6 @@
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
 import { SupportedProtocols } from "@/components/supported-protocols";
-import { Process } from "@/components/process";
 import { Comparison } from "@/components/comparison";
 import { Features } from "@/components/features";
 import { FeatureDetails } from "@/components/feature-details";
@@ -20,7 +19,6 @@ export default function Home() {
       <main>
         <Hero />
         <SupportedProtocols />
-        <Process />
         <Comparison />
         <Features />
         <FeatureDetails />
