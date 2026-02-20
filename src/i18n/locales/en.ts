@@ -22,10 +22,6 @@ export const en = {
     editorTitle: "FlowPacket Editor — test-flow.fpk",
   },
 
-  // Supported Protocols
-  protocols: {
-    title: "Lots of Protocols to Choose From, More Coming Soon",
-  },
 
   // Process
   process: {
@@ -86,6 +82,8 @@ export const en = {
       "Manually manage connection lifecycle and timeouts",
       "No visual overview of complex test sequences",
       "Hard to share and collaborate on test scenarios",
+      "Single test file grows endlessly, hard to locate code",
+      "Commented-out code piles up to avoid rewriting sockets",
     ],
     visualFirst: "Visual-First Approach",
     visualFirstTitle: "FlowPacket Canvas Testing",

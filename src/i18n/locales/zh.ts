@@ -22,10 +22,6 @@ export const zh = {
     editorTitle: "FlowPacket 编辑器 — test-flow.fpk",
   },
 
-  // Supported Protocols
-  protocols: {
-    title: "丰富的协议支持，更多即将推出",
-  },
 
   // Process
   process: {
@@ -75,6 +71,8 @@ export const zh = {
       "手动管理连接生命周期和超时",
       "无法直观概览复杂的测试序列",
       "难以共享和协作测试场景",
+      "单文件越写越长，定位测试代码困难",
+      "大量注释代码堆积，避免重复却制造混乱",
     ],
     visualFirst: "可视化优先方式",
     visualFirstTitle: "FlowPacket 画布测试",
